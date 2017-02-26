@@ -16,8 +16,11 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-
-    return ['the wrong thing']
+    # assuming that the list contains only integers
+    for number in numbers:
+        if (number % 2) != 1:
+            numbers.remove(number)
+    return numbers
 
 
 def print_indices(items):
@@ -43,11 +46,14 @@ def print_indices(items):
         1 Jeep
         2 Toyota
         3 Volvo
-    
+
     """
+    for index, item in enumerate(items):
+        print index, item
 
-    print "Nothing at all"
 
+#   for item in range(len(items)):
+#        print item, items[item]
 
 def foods_in_common(foods1, foods2):
     """Find foods in common.
@@ -66,7 +72,7 @@ def foods_in_common(foods1, foods2):
         ...     ["hummus", "cheese", "beets", "kale", "lentils", "bagel", "cake" ]
         ... )
         ['bagel', 'cake', 'cheese', 'kale']
-        
+
     If there are no foods in common, return an empty list::
 
         >>> foods_in_common(
@@ -76,8 +82,16 @@ def foods_in_common(foods1, foods2):
         []
 
     """
+    #items_in_common = []
+    #for item in foods1:
+    #    if item in foods2:
+    #        items_in_common.append(item)
+    #items_in_common.sort()
+    #return items_in_common
 
-    return ['the wrong thing']
+    intersection_list = list(set(foods1) & set(foods2))
+    intersection_list.sort()
+    return intersection_list
 
 
 def every_other_item(items):
@@ -93,8 +107,10 @@ def every_other_item(items):
        ... )
        ['you', 'are', 'good', 'at', 'code']
     """
-
-    return ['the wrong thing']
+    for i in range(len(items)):
+        if i % 2 != 0:
+            items.remove(items[item])
+    return items
 
 
 def largest_n_items(items, n):
@@ -118,8 +134,8 @@ def largest_n_items(items, n):
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
     """
-
-    return []
+    items.sort()
+    return items[(0 - n):]
 
 
 #####################################################################

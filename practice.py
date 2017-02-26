@@ -17,8 +17,8 @@ def print_list(items):
         3
         9
     """
-
-    print "the wrong thing"
+    for item in items:
+        print item
 
 
 def long_words(words):
@@ -37,8 +37,11 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
-
-    return ['the wrong thing']
+    long_words_list = []
+    for word in words:
+        if len(word) > 4:
+            long_words_list.append(word)
+    return long_words_list
 
 
 def n_long_words(words, n):
