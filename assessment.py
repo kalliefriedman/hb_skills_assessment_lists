@@ -16,11 +16,14 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    # assuming that the list contains only integers
-    for number in numbers:
-        if (number % 2) != 1:
-            numbers.remove(number)
-    return numbers
+
+    odd_numbers_list = []
+    for index in range(len(numbers)):
+        if isinstance( numbers[index], int ) is True:
+            if (numbers[index] % 2) == 1:
+                odd_numbers_list.append(numbers[index])
+    return odd_numbers_list
+
 
 
 def print_indices(items):
@@ -107,10 +110,8 @@ def every_other_item(items):
        ... )
        ['you', 'are', 'good', 'at', 'code']
     """
-    for i in range(len(items)):
-        if i % 2 != 0:
-            items.remove(items[item])
-    return items
+    
+    return items[::2]
 
 
 def largest_n_items(items, n):
@@ -133,10 +134,13 @@ def largest_n_items(items, n):
 
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
+
     """
     items.sort()
-    return items[(0 - n):]
-
+    if n == 0:
+        return []
+    else:
+        return items[(0 - n):]
 
 #####################################################################
 # END OF ASSESSMENT: You can ignore everything below.
