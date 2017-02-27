@@ -140,7 +140,7 @@ def largest_n_items(items, n):
     if n == 0:
         return []
     else:
-        return items[(0 - n):]
+        return items[(0 - n):(-1 + 1)]
 
 #####################################################################
 # END OF ASSESSMENT: You can ignore everything below.
