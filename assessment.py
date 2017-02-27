@@ -19,7 +19,7 @@ def all_odd(numbers):
 
     odd_numbers_list = []
     for index in range(len(numbers)):
-        if isinstance( numbers[index], int ) is True:
+        if isinstance(numbers[index], int ) is True:  #Ensuring that variable is a number
             if (numbers[index] % 2) == 1:
                 odd_numbers_list.append(numbers[index])
     return odd_numbers_list
@@ -54,6 +54,7 @@ def print_indices(items):
     for index, item in enumerate(items):
         print index, item
 
+#  Another solution below:
 
 #   for item in range(len(items)):
 #        print item, items[item]
@@ -85,6 +86,8 @@ def foods_in_common(foods1, foods2):
         []
 
     """
+    #Another solution below:
+
     #items_in_common = []
     #for item in foods1:
     #    if item in foods2:
@@ -136,6 +139,7 @@ def largest_n_items(items, n):
         [3, 3]
 
     """
+    #  I knew there had to be a better way to do this that would work even if n=0. Would like to discuss this.
     items.sort()
     if n == 0:
         return []
